@@ -19,7 +19,7 @@ def main():
     while True:
         if attempts == 0:
             print("You've run out of guesses, you lose.")
-            break
+            return False
         guess = int(input("Make a guess: "))
 
         if guess == answer:
