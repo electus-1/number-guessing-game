@@ -7,8 +7,7 @@ def main():
     print("Welcome to Guess The Number Game!")
     print("I'm thinking of a number between 1 and 100.")
     answer = randint(1, 100)
-    print(f"Psst. The answer is {answer}.")
-    difficulty = input('Choose a difficulty. Type "easy", "normal" or "hard": ')
+    difficulty = input('Choose a difficulty. Type "easy", "normal" or "hard": ').lower()
     if difficulty == "easy":
         attempts = 10
     elif difficulty == "hard":
@@ -45,12 +44,14 @@ def main():
 while True:
     was_succesful = main()
     if was_succesful:
-        wants_to_go_again = input('Do you want another challenge? Type "yes" or "no": ')
+        wants_to_go_again = input(
+            'Do you want another challenge? Type "yes" or "no": '
+        ).lower()
         if wants_to_go_again != "yes":
             break
     if not was_succesful:
         wants_to_go_again = input(
             'Do you want to give it another go? Type "yes" or "no": '
-        )
+        ).lower()
         if wants_to_go_again != "yes":
             break
